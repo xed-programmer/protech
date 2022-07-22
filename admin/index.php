@@ -12,7 +12,7 @@
     $gas = 0;
     $temperature = 0;
     $con = Database::connection();
-    $stmt = $con->query("SELECT * FROM sensordata ORDER BY created_at DESC LIMIT 1");
+    $stmt = $con->query("SELECT * FROM prtch_sensordata ORDER BY created_at DESC LIMIT 1");
     $stmt->execute();
     $data = $stmt->fetchAll();              
     if(count($data)>0){
@@ -38,7 +38,7 @@
 
         <!-- Main content -->
         <div class="content">
-            <div class="container-fluid">  
+            <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box">
@@ -113,23 +113,6 @@
                     <th>Date</th>
                 </tr>
                   </thead>
-                  <!-- <tbody>
-                    <?php 
-                      // foreach($data as $d){
-                      //   echo "
-                      //   <tr>
-                      //   <td>".$d['name']."</td>
-                      //   <td>".$d['location']."</td>
-                      //   <td>".$d['light']."</td>
-                      //   <td>".$d['smoke1']."</td>
-                      //   <td>".$d['smoke2']."</td>
-                      //   <td>".$d['temperature']."&#8451</td>
-                      //   <td>".$d['created_at']."</td>                        
-                      // </tr>
-                      //   ";
-                      // }
-                    ?>                  
-                  </tbody> -->
                   <tfoot>
                   <tr>
                   <th>Name</th>

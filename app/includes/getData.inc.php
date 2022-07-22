@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
                 $pdo = Database::connection();
                 $today = date('Y-m-d H:i:s', mktime(0,0,0));
                 //$stmt = $pdo->query("SELECT * FROM sensordata WHERE created_at < $today ORDER BY created_at ASC LIMIT 10");
-                $stmt = $pdo->query("SELECT * FROM sensordata ORDER BY created_at DESC");
+                $stmt = $pdo->query("SELECT * FROM prtch_sensordata ORDER BY created_at DESC");
                 $stmt->execute();
                 $datas = $stmt->fetchAll();
                 $value = [];

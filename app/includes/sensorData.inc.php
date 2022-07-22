@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
             ];
             try{
                 $pdo = Database::connection();
-                $sql = 'INSERT INTO sensordata (name, location, light, smoke1, smoke2, temperature, created_at) VALUES(:name, :location, :light, :smoke1, :smoke2, :temperature, NOW())';
+                $sql = 'INSERT INTO prtch_sensordata (name, location, light, smoke1, smoke2, temperature, created_at) VALUES(:name, :location, :light, :smoke1, :smoke2, :temperature, NOW())';
                 $stmt = $pdo->prepare($sql);                
                 $stmt->execute($data);
             }catch(PDOException $e){

@@ -6,7 +6,7 @@ class LoginUser extends Database {
     protected function checkUser($email)
     {
         $pdo = $this::connection();   
-        $sql = "SELECT id FROM users WHERE email=:email;";
+        $sql = "SELECT id FROM prtch_users WHERE email=:email;";
         $stmt = $pdo->prepare($sql);        
         $stmt->execute([':email'=>$email]);
 
@@ -18,7 +18,7 @@ class LoginUser extends Database {
     protected function loginUser($email, $password)
     {
         $pdo = $this::connection();   
-        $sql = "SELECT * FROM users WHERE email=:email;";
+        $sql = "SELECT * FROM prtch_users WHERE email=:email;";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([':email'=>$email]);             
         

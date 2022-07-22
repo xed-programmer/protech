@@ -3,7 +3,7 @@
 class RegisterUser extends Database{
 
     protected function setUser($name, $email, $password){
-        $sql = "INSERT INTO users (name, email, password) VALUES(:name,:email,:pass);";
+        $sql = "INSERT INTO prtch_users (name, email, password) VALUES(:name,:email,:pass);";
         $pdo = $this::connection();     
         $stmt = $pdo->prepare($sql);     
 
@@ -23,7 +23,7 @@ class RegisterUser extends Database{
     // Check weather if email already exists
     protected function checkUser($email)
     {
-        $sql = "SELECT id FROM users WHERE email=:email";   
+        $sql = "SELECT id FROM prtch_users WHERE email=:email";   
         $pdo = $this::connection();     
         $stmt = $pdo->prepare($sql);        
         $stmt->execute([':email'=>$email]);
@@ -34,7 +34,7 @@ class RegisterUser extends Database{
 
     private function getUserByEmail($email)
     {
-        $sql = "SELECT id FROM users WHERE email=:email";   
+        $sql = "SELECT id FROM prtch_users WHERE email=:email";   
         $pdo = $this->connection();     
         $stmt = $pdo->prepare($sql);        
         $stmt->execute([':email'=>$email]);

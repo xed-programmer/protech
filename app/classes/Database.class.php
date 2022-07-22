@@ -2,9 +2,9 @@
 
 class Database {
     private static $host = "localhost";
-    private static $dbname = "protech";
-    private static $user = "root";
-    private static $pass = "";
+    private static $dbname = "oqypbtdm_group5";
+    private static $user = "oqypbtdm_group5";
+    private static $pass = "qizwi7CP,!3,";
 
     public static function connection()
     {
